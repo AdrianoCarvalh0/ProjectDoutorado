@@ -1,0 +1,23 @@
+{
+  "name": "RAPIDS Dev",
+  "image": "rapidsai/base:24.06-cuda12.2-py3.10",
+  "runArgs": [
+    "--gpus=all",
+    "--user=root"
+  ],
+  "workspaceFolder": "/workspace",
+  "mounts": [
+    "source=${localWorkspaceFolder},target=/workspace,type=bind"
+  ],
+  "settings": {
+    "terminal.integrated.defaultProfile.linux": "bash",
+    "python.pythonPath": "/opt/conda/bin/python",
+    "python.linting.enabled": true,
+    "python.formatting.provider": "black"
+  },
+  "extensions": [
+    "ms-python.python",
+    "ms-toolsai.jupyter"
+  ],
+  "postCreateCommand": "chmod -R a+rw /workspace"
+}
